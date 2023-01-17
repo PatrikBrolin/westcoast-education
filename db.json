@@ -1,19 +1,63 @@
 {
-  "posts": [
+  "teachers": [
+    {
+      "id": 0,
+      "firstname": "Salma",
+      "lastname": "Engström",
+      "ssn": "940523-7505",
+      "phonenumber": "0706070962",
+      "email": "SalmaEngstrom@gmail.se",
+      "picture": "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=0hb44OrI",
+      "competences": ["Matematik", "Naturkunskap"]
+    },
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "firstname": "Charles",
+      "lastname": "Ek",
+      "ssn": "430302-6191",
+      "phonenumber": "0736430040",
+      "email": "CharlesEk@gmail.com",
+      "picture": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_481292845_77896.jpg",
+      "competences": ["Matematik", "Naturkunskap"]
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "firstname": "Enes",
+      "lastname": "Åström",
+      "ssn": "850314-1932",
+      "phonenumber": "0735583518",
+      "email": "EnesAstrom@hotmail.com",
+      "picture": "https://t3.ftcdn.net/jpg/02/65/18/30/360_F_265183061_NkulfPZgRxbNg3rvYSNGGwi0iD7qbmOp.jpg",
+      "competences": ["Naturkunskap", "Biologi"],
+      "id": 2
+    },
+    {
+      "firstname": "Jennie",
+      "lastname": "Carlsson",
+      "ssn": "031024-5220",
+      "phonenumber": "079-6294364",
+      "email": "JennieCarlsson@hotmail.com",
+      "picture": "https://i0.wp.com/www.ghanacelebrities.com/wp-content/uploads/2017/07/Black-woma.jpeg?resize=759%2C594",
+      "competences": ["Historia"],
+      "id": 3
+    },
+    {
+      "firstname": "Charles",
+      "lastname": "Lundgren",
+      "ssn": "850323-8977",
+      "phonenumber": "070-4748949",
+      "email": "CharlesLundgren@hotmail.com",
+      "picture": "https://f4.bcbits.com/img/a1801332551_10.jpg",
+      "competences": ["Historia"],
+      "id": 4
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "Courses": [
+    {
+      "id": 0,
+      "coursetitle": "Matematik 1A",
+      "length": "5 veckor",
+      "description": "Matte 1 repeterar begreppen inom aritmetik, algebra, geometri, procent och förändringsfaktor.",
+      "startdate": "2023-02-01"
+    }
+  ]
 }

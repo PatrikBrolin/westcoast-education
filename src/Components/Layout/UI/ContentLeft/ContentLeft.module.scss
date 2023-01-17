@@ -1,0 +1,42 @@
+.contentLeft {
+    position: relative;
+    width: 30%;
+    background: rgb(203, 36, 36);
+    background: linear-gradient(
+      267deg,
+      rgba(203, 36, 36, 1) 0%,
+      rgb(205, 94, 94) 100%
+    );
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    padding: 5%;
+    box-sizing: border-box;
+    h2 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 18px;
+      text-align: center;
+      word-spacing: 5px;
+    }
+    button {
+      background-color: transparent;
+      color: white;
+      width: min-content;
+      white-space: nowrap;
+      border: 2px solid white;
+      border-radius: 20px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    
+      .contentLeft {
+        width: 100%;
+      }
+     
+  }

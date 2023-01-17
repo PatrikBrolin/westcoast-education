@@ -1,0 +1,37 @@
+@import "../../Styles/fonts";
+
+
+.container {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    padding-top: 70px;
+  }
+  div {
+    padding: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      white-space: nowrap;
+    }
+    button {
+      padding: 15px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: $Lato-font;
+      background: linear-gradient(
+        267deg,
+        rgba(203, 36, 36, 1) 0%,
+        rgb(205, 94, 94) 100%
+      );
+      color: white;
+      border: none;
+    }
+  }
+}

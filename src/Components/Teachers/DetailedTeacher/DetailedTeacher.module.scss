@@ -1,0 +1,83 @@
+@import "../../../Styles/fonts";
+
+.container {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .cardLeft {
+    width: 35vw;
+    height: 60vh;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .cardRight {
+    width: 45vw;
+  min-height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 400px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    ul {
+
+      h3 {
+        font-family: $Lato-font;
+      }
+      list-style: none;
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+
+      li {
+        width: 45%;
+        ul {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          li {
+            margin-top: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .container{
+    flex-direction: column;
+    .cardLeft {
+      width: 100vw;
+      height: 40vh;
+    }
+    .cardRight {
+      width: 100vw;
+      height: 60vh;
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    .cardRight {
+     ul{
+
+      display: flex;
+      flex-direction: column;
+     }
+    }
+  }
+
+}
+
