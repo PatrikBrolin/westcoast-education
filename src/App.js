@@ -7,6 +7,7 @@ import Navbar from "./Components/Layout/Navbar/Navbar";
 import Teachers from "./Components/Teachers/Teachers";
 import Add from "./Components/FormPages/Add";
 import DetailedTeacher from "./Components/Teachers/DetailedTeacher/[slug]";
+import DetailedCourse from "./Components/Courses/DetailedCourse/[slug]";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/courses" element={<Courses />} />
 					<Route path="/add" element={<Add />} />
 					<Route path="/teachers/:slug" element={<DetailedTeacher />} />
+					<Route path="/courses/:slug" element={<DetailedCourse />} />
 				</Routes>
 			</main>
 		</Router>

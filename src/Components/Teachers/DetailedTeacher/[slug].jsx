@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Card from "../../Layout/UI/Card/Card";
 import styles from "./DetailedTeacher.module.scss";
+import LandingImage from '../../../Assets/LandingImage.png'
 
 const DetailedTeacher = () => {
   const [teacher, setTeacher] = useState([]);
@@ -24,6 +25,7 @@ const DetailedTeacher = () => {
       </Card>
       <Card>
         <div className={styles.cardRight}>
+          <img src={LandingImage} alt="background"/>
           <ul>
             <li>
               <h3>Namn</h3>

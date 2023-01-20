@@ -16,6 +16,7 @@
     }
   }
   .cardRight {
+    position: relative;
     width: 45vw;
   min-height: 60vh;
     overflow-y: scroll;
@@ -25,6 +26,16 @@
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
+    }
+    img{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 120%;
+      width: 100%;
+      opacity: .3;
+      filter: opacity(0.3) drop-shadow(0 0 0 rgb(203, 36, 36));
+      object-fit: cover;
     }
     ul {
 

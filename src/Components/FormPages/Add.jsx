@@ -22,11 +22,11 @@ const Add = () => {
                 setShowTeacherModal(true);
               }}
             >
-              Lägg till
+              Lägg till lärare
             </button>
           </div>
           {showTeacherModal && (
-            <Modal>
+            <Modal close={setShowTeacherModal}>
               <Card>
                 <AddTeacherForm modal={setShowTeacherModal} />
               </Card>
@@ -41,11 +41,11 @@ const Add = () => {
                 setShowCourseModal(true);
               }}
             >
-              Lägg till
+              Lägg till kurs
             </button>
           </div>
           {showCourseModal && (
-            <Modal>
+            <Modal close={setShowCourseModal}>
               <Card>
                 <AddCourseForm modal={setShowCourseModal} />
               </Card>

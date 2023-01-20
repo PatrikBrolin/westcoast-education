@@ -1,15 +1,14 @@
-import { useNavigate } from "react-router-dom";
-
 import ContentLeft from "../Layout/UI/ContentLeft/ContentLeft";
 import ContentRight from "../Layout/UI/ContentRight/ContentRight";
 
 import styles from "./HomePage.module.scss";
 
+import LandingImage from "../../../src/Assets/LandingImage.png";
+
 const HomePage = () => {
-  const navigate = useNavigate();
   return (
     <div className={styles.hero}>
-      <ContentLeft>
+      <ContentLeft className={styles.left}>
         <h2>Lorem Ipsum</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -19,12 +18,11 @@ const HomePage = () => {
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
         </p>
-
-          <button onClick={()=> {navigate("/courses")}}>Hitta kurs</button>
-
       </ContentLeft>
 
-      <ContentRight></ContentRight>
+      <ContentRight className={styles.right}>
+        <img src={LandingImage} alt="background" />
+      </ContentRight>
     </div>
   );
 };

@@ -6,7 +6,7 @@ describe('DetailedTeacher component', () => {
     it("There should be a image of the teacher", () => {
         //arrange
         setup()
-        const image = screen.getByRole('img')
+        const image = screen.getByAltText("teacher")
         //act
 
         //assert

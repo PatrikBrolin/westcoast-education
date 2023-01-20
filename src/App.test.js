@@ -14,7 +14,7 @@ describe("Routing", () => {
     setup();
 
     //Act
-    expect(screen.getByText(/Hitta kurs/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", {name: /Lorem Ipsum/i})).toBeInTheDocument();
 
     //test that lärare link is working
     await userEvent.click(screen.getByText(/Lärare/i));
@@ -22,7 +22,7 @@ describe("Routing", () => {
 
     //test that link to startpage is working
     await userEvent.click(screen.getByText(/Westcoast Education/i));
-    expect(screen.getByText(/Hitta kurs/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", {name: /Lorem Ipsum/i})).toBeInTheDocument();
 
     //test that kurser link is working
     await userEvent.click(screen.getByText(/Kurser/i));

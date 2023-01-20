@@ -1,13 +1,14 @@
 import { useState, useRef, useContext } from "react";
-
+import { useNavigate } from "react-router-dom";
 import TeachersContext from "../../../Store/teachers-context";
 
 import styles from "./AddTeacherForm.module.scss";
 
-const AddTeacherForm = ({modal}) => {
+const AddTeacherForm = ({ modal }) => {
   const [competenceList, setCompetenceList] = useState([]);
   const [competenceInput, setCompetenceInput] = useState("");
-
+  const [disabledButton, setDisabledButton] = useState(true);
+  const navigate = useNavigate();
   //refs
   const firstname = useRef();
   const lastname = useRef();
@@ -37,6 +38,21 @@ const AddTeacherForm = ({modal}) => {
     }
   };
 
+  const formErrorHandler = () => {
+    if (
+      firstname.current.value.length > 0 &&
+      lastname.current.value.length > 0 &&
+      ssn.current.value.length > 0 && 
+      phonenumber.current.value.length > 0 &&
+      email.current.value.length > 0 &&
+      photoUrl.current.value.length > 0
+    ) {
+      setDisabledButton(false);
+    } else {
+      setDisabledButton(true);
+    }
+  };
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -50,18 +66,20 @@ const AddTeacherForm = ({modal}) => {
       competences: competenceList,
     };
 
-    const addTeacher = await fetch("http://localhost:3010/teachers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(teacher),
-    });
-    if (addTeacher.status === 201) {
-      clearInputFields();
-      modal(false)
-      context.onAddTeacher();
-      
+    if (!disabledButton) {
+      const addTeacher = await fetch("http://localhost:3010/teachers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(teacher),
+      });
+      if (addTeacher.status === 201) {
+        clearInputFields();
+        modal(false);
+        context.onAddTeacher();
+        navigate("/teachers");
+      }
     }
   };
 
@@ -76,6 +94,7 @@ const AddTeacherForm = ({modal}) => {
             id="firstname"
             placeholder="Förnamn"
             ref={firstname}
+            onChange={formErrorHandler}
           />
         </div>
         <div className={styles.inputBox}>
@@ -85,11 +104,18 @@ const AddTeacherForm = ({modal}) => {
             id="lastname"
             placeholder="Efternamn"
             ref={lastname}
+            onChange={formErrorHandler}
           />
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="SSN">Personnummer</label>
-          <input type="text" id="SSN" placeholder="Personnummer" ref={ssn} />
+          <input
+            type="text"
+            id="SSN"
+            placeholder="Personnummer"
+            ref={ssn}
+            onChange={formErrorHandler}
+          />
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="phonenumber">Telefonnummer</label>
@@ -98,15 +124,28 @@ const AddTeacherForm = ({modal}) => {
             id="phonenumber"
             placeholder="Telefonnummer"
             ref={phonenumber}
+            onChange={formErrorHandler}
           />
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Email" ref={email} />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            ref={email}
+            onChange={formErrorHandler}
+          />
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="img">Photo Url</label>
-          <input type="text" id="img" placeholder="Photo Url" ref={photoUrl} />
+          <input
+            type="text"
+            id="img"
+            placeholder="Photo Url"
+            ref={photoUrl}
+            onChange={formErrorHandler}
+          />
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="competences">Kompetenser</label>
@@ -131,7 +170,7 @@ const AddTeacherForm = ({modal}) => {
           </ul>
         </div>
         <div className={styles.button}>
-          <button>Skicka</button>
+          <button disabled={disabledButton}>Skicka</button>
         </div>
       </form>
     </>

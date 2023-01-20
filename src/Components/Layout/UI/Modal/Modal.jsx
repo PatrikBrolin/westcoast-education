@@ -1,8 +1,10 @@
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.scss";
 
-const Overlay = () => {
-  return <div className={styles.overlay} />;
+const Overlay = ({close}) => {
+  return <div className={styles.overlay} onClick={() => {
+    close(false)
+  }}/>;
 };
 const ModalOverlay = ({children}) => {
   
@@ -14,11 +16,11 @@ const ModalOverlay = ({children}) => {
   );
 };
 
-const Modal = ({children}) => {
+const Modal = ({children, close}) => {
   return (
     <div>
       {ReactDOM.createPortal(
-        <Overlay />,
+        <Overlay close={close}/>,
         document.querySelector("#overlay-root")
       )}
 

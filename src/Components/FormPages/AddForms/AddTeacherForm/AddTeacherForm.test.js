@@ -1,19 +1,20 @@
 import { render, screen } from "@testing-library/react";
 
+import { BrowserRouter } from "react-router-dom";
 import AddTeacherForm from "./AddTeacherForm";
 
 //arrange
 //act
 //assert
 describe("Add teacher form", () => {
-  const setup = () => render(<AddTeacherForm />);
+  const setup = () => render(<AddTeacherForm />, { wrapper: BrowserRouter });
   describe("Page layout", () => {
     it("Form has a heading", () => {
       //arrange
-      setup()
-      const title = screen.getByRole("heading", {name: /Lägg till lärare/i})      //act
+      setup();
+      const title = screen.getByRole("heading", { name: /Lägg till lärare/i }); //act
       //assert
-      expect(title).toBeInTheDocument()
+      expect(title).toBeInTheDocument();
     });
     it("has a firstname input", () => {
       //arrange
@@ -68,21 +69,21 @@ describe("Add teacher form", () => {
       expect(img).toBeInTheDocument();
     });
     it("has a competence input", () => {
-        //arrange
-        setup();
-        const competence = screen.getByLabelText(/Kompetenser/i);
-        //act
-        //assert
-        expect(competence).toBeInTheDocument();
-      });
+      //arrange
+      setup();
+      const competence = screen.getByLabelText(/Kompetenser/i);
+      //act
+      //assert
+      expect(competence).toBeInTheDocument();
+    });
 
-      it('has a button', () => {
-         //arrange
-         setup();
-         const button = screen.getByRole("button", {name: /Skicka/i});
-         //act
-         //assert
-         expect(button).toBeInTheDocument();
-      })
+    it("has a button", () => {
+      //arrange
+      setup();
+      const button = screen.getByRole("button", { name: /Skicka/i });
+      //act
+      //assert
+      expect(button).toBeInTheDocument();
+    });
   });
 });

@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-
+import { BrowserRouter } from "react-router-dom";
 import AddCourseForm from "./AddCourseForm";
 
 //arrange
 //act
 //assert
 describe("Add teacher form", () => {
-  const setup = () => render(<AddCourseForm />);
+  const setup = () => render(<AddCourseForm />, { wrapper: BrowserRouter });
   describe("Page layout", () => {
     it("Form has a heading", () => {
       //arrange

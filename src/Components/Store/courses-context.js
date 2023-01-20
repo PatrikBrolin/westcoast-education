@@ -4,20 +4,28 @@ import { TeachersContextProvider } from "./teachers-context";
 
 const CoursesContext = React.createContext({
   courses: [],
+  onAddCourse: () => {}
 });
 
 export const CoursesContextProvider = (props) => {
   const [courses, setCourses] = useState([]);
 
-  useEffect(() => {
+  const onAddCourseHandler = () => {
+    fetchData()
+  }
+
+  const fetchData = () => {
     fetch("http://localhost:3010/courses")
-      .then((response) => response.json())
-      .then((data) => setCourses(data));
+    .then((response) => response.json())
+    .then((data) => setCourses(data));
+  }
+  useEffect(() => {
+    fetchData()
   }, []);
 
   return (
     <CoursesContext.Provider
-      value={{ courses: courses, setCourses: setCourses }}
+      value={{ courses: courses, setCourses: setCourses, onAddCourse: onAddCourseHandler }}
     >
       <TeachersContextProvider>{props.children}</TeachersContextProvider>
     </CoursesContext.Provider>

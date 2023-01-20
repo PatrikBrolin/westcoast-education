@@ -1,0 +1,53 @@
+@import "../../../Styles/fonts";
+
+
+.container {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+  .courseStyle {
+   position: relative;
+    padding: 100px;
+    width: 45vw;
+    min-height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 400px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    img{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 120%;
+      width: 100%;
+      opacity: .3;
+      filter: opacity(0.3) drop-shadow(0 0 0 rgb(203, 36, 36));
+    object-fit: cover;
+
+    }
+    h2{text-align: left;
+    margin-bottom: 100px;
+    padding-inline-start: 40px;}
+    ul {
+
+      h3 {
+        font-family: $Lato-font;
+      }
+      list-style: none;
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+
+      li {
+        width: 45%;
+      }
+    }
+  }
+}

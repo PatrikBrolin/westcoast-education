@@ -22,14 +22,6 @@ describe("page layout", () => {
     //assert
     expect(paragraph).toBeInTheDocument();
   });
-  it("Page should have a button", () => {
-    //arrange
-    setup();
-    const button = screen.getByRole("button", { name: /Hitta kurs/i });
-    //act
-    //assert
-    expect(button).toBeInTheDocument();
-  });
 
   
 });

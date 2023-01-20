@@ -1,11 +1,23 @@
 @import "../../Styles/fonts";
 
 .hero {
+  position: relative;
   display: flex;
   height: 80vh;
   width: 100%;
   color: white;
   z-index: -1;
+  overflow: hidden;
 
+
+  img {
+    position: absolute;
+    height: 150%;
+    left: 0px;
+    bottom: -100px;
+    filter: opacity(0.3) drop-shadow(0 0 0 rgb(203, 36, 36));
+    object-fit: cover;
+    width: 100%;
+  }
 
 }
